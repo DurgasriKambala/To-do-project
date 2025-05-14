@@ -1,0 +1,17 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Launch Java File",
+      "mainClass": "${workspaceFolder}/${input:javaFileName}"
+    }
+  ],
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "javaFileName",
+      "description": "Enter the path to the Java file you want to run (e.g., to-do.java)"
+    }
+  ]
+}
