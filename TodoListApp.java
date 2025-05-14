@@ -4,7 +4,7 @@ import java.util.*;
 public class TodoListApp {
 
     private static final String FILE_NAME = "tasks.txt";
-    private static List<String> tasks = new ArrayList<>();
+    private static final List<String> tasks = new ArrayList<>();
 
     public static void main(String[] args) {
         loadTasks();
@@ -20,21 +20,15 @@ public class TodoListApp {
             String choice = scanner.nextLine();
 
             switch (choice) {
-                case "1":
-                    viewTasks();
-                    break;
-                case "2":
-                    addTask(scanner);
-                    break;
-                case "3":
-                    deleteTask(scanner);
-                    break;
-                case "4":
+                case "1" -> viewTasks();
+                case "2" -> addTask(scanner);
+                case "3" -> deleteTask(scanner);
+                case "4" -> {
                     saveTasks();
                     System.out.println("Tasks saved. Goodbye!");
                     return;
-                default:
-                    System.out.println("Invalid option. Try again.");
+                }
+                default -> System.out.println("Invalid option. Try again.");
             }
         }
     }
